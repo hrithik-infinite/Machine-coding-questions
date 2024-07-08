@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  background-color: darkgray;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: aliceblue;
+}
+
+.side-left {
+  flex: 0 0 200px;
+  background-color: lightpink;
+  padding: 20px;
+}
+
+.side-right {
+  flex: 0 0 200px;
+  background-color: lightblue;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .side-left,
+  .side-right,
+  .main-content {
+    width: 100%;
+  }
+}
