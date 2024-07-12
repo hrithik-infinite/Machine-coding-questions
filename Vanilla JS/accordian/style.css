@@ -1,0 +1,15 @@
+.accordian {
+  border: 1px solid gray;
+}
+.accordian-item {
+  border-bottom: 1px solid gray;
+}
+.accordian-title {
+  background-color: wheat;
+  padding: 10px;
+  cursor: pointer;
+}
+.accordian-body {
+  padding: 10px;
+  display: none;
+}
