@@ -19,7 +19,7 @@ function App() {
     }
   };
   useEffect(() => {
-    fetchImages(5);
+    fetchImages(20);
   }, []);
 
   return (

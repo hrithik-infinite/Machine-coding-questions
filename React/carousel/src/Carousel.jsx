@@ -13,12 +13,12 @@ const Carousel = ({ images = [], isLoading = false, imageLimit = images.length, 
 
   const goToPrev = () => {
     setCurrentIndex((prev) => {
-      return prev === 0 ? images.length - 1 : prev - 1;
+      return prev === 0 ? imageLimit - 1 : prev - 1;
     });
   };
   const goToNext = () => {
     setCurrentIndex((prev) => {
-      return prev === images.length - 1 ? 0 : prev + 1;
+      return prev === imageLimit - 1 ? 0 : prev + 1;
     });
   };
 
