@@ -1,13 +1,13 @@
 "use strict";
 
 // Global scope
-console.log(this);
+console.log("Global scope:", this);
 // In strict mode, `this` is undefined.
 // In non-strict mode, `this` refers to the global object (window in browsers).
 
 // Inside a function
 function x() {
-  console.log(this);
+  console.log("Inside function x:", this);
   // In strict mode, `this` is undefined.
   // In non-strict mode, `this` refers to the global object (window in browsers).
 }
@@ -21,8 +21,8 @@ window.x(); // window
 const student = {
   name: "Hrithik",
   printName: function () {
-    console.log(this);
-    console.log(this.name);
+    console.log("Inside student.printName:", this);
+    console.log("Inside student.printName (this.name):", this.name);
   },
 };
 student.printName();
@@ -47,7 +47,7 @@ student.printName.call(student2);
 const obj = {
   a: 10,
   x: () => {
-    console.log(this);
+    console.log("Inside obj.x (arrow function):", this);
     // In an arrow function, `this` does not refer to the object `obj`.
     // Instead, `this` refers to its lexical scope, which is the global scope in this case.
   },
@@ -58,6 +58,25 @@ obj.x(); // In strict mode, this will log undefined (lexical scope is global sco
 const obj2 = {
   a: 10,
   x: function () {
-    console.log(this);
+    console.log("Inside obj2.x (normal function):", this);
+    // In a normal function, `this` refers to the object `obj2`.
   },
 };
+obj2.x();
+
+const obj3 = {
+  a: 20,
+  x: function () {
+    const y = () => {
+      console.log("Inside obj3.x > y (arrow function):", this);
+      // In the arrow function `y`, `this` inherits from its lexical scope, which is the `x` function.
+      // Therefore, `this` refers to `obj3` because `x` is a method of `obj3`.
+    };
+    y();
+  },
+};
+
+obj3.x();
+// Here, `this` inside `y` refers to `obj3` because arrow functions do not have their own `this`
+// and take `this` from their containing (lexical) scope, which is the `x` function.
+// `this` in the `x` function refers to `obj3`.
