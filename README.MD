@@ -18,6 +18,7 @@ Welcome to the **Machine Coding Questions** repository! This collection features
 2. **Pagination (with truncation)**: Implement a pagination component with page number truncation for better UX.
 3. **Star Rating Component**: Create a star rating component to collect user feedback.
 4. **Light & Dark Mode**: Add light and dark mode toggling functionality to an application.
+5. **Progress Bar** : Create a Progress Bar
 
 Feel free to explore and contribute to these projects. Your feedback and contributions are highly appreciated!
 
