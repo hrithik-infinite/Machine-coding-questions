@@ -20,6 +20,7 @@ Welcome to the **Machine Coding Questions** repository! This collection features
 4. **Light & Dark Mode**: Add light and dark mode toggling functionality to an application.
 5. **Progress Bar**: Create a Progress Bar component to visualize progress.
 6. **Tic Tac Toe**: Implement a Tic Tac Toe game with game logic and reset functionality.
+7. **Advance Tic Tac Toe**: Implement a Tic Tac Toe game with game logic and reset functionality and customizable board size.
 
 Feel free to explore, contribute, and enhance these projects. Your feedback and contributions are appreciated!
 
