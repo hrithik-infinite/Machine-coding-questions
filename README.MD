@@ -18,8 +18,9 @@ Welcome to the **Machine Coding Questions** repository! This collection features
 2. **Pagination (with truncation)**: Implement a pagination component with page number truncation for better UX.
 3. **Star Rating Component**: Create a star rating component to collect user feedback.
 4. **Light & Dark Mode**: Add light and dark mode toggling functionality to an application.
-5. **Progress Bar** : Create a Progress Bar
+5. **Progress Bar**: Create a Progress Bar component to visualize progress.
+6. **Tic Tac Toe**: Implement a Tic Tac Toe game with game logic and reset functionality.
 
-Feel free to explore and contribute to these projects. Your feedback and contributions are highly appreciated!
+Feel free to explore, contribute, and enhance these projects. Your feedback and contributions are appreciated!
 
 Happy coding! 😊
