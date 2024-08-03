@@ -1,0 +1,52 @@
+.container {
+  text-align: center;
+}
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:nth-child(1) {
+  background-color: #4caf50;
+  color: white;
+}
+
+button:nth-child(1):hover {
+  background-color: #45a049;
+}
+
+button:nth-child(2) {
+  background-color: #f44336;
+  color: white;
+}
+
+button:nth-child(2):hover {
+  background-color: #d32f2f;
+}
+
+button:nth-child(3) {
+  background-color: #2196f3;
+  color: white;
+}
+
+button:nth-child(3):hover {
+  background-color: #1976d2;
+}
+
+button:nth-child(4) {
+  background-color: #ff9800;
+  color: white;
+}
+
+button:nth-child(4):hover {
+  background-color: #fb8c00;
+}
