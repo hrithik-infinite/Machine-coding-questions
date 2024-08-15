@@ -22,7 +22,8 @@ Welcome to the **Machine Coding Questions** repository! This collection features
 6. **Tic Tac Toe**: Implement a Tic Tac Toe game with game logic and reset functionality.
 7. **Advance Tic Tac Toe**: Implement a Tic Tac Toe game with game logic and reset functionality and customizable board size.
 8. **Toast**: Implement a toast component
-
+9. **Config Driven Forms** : WIP
+10. **Auto Suggestions for input search**
 Feel free to explore, contribute, and enhance these projects. Your feedback and contributions are appreciated!
 
 Happy coding! 😊
