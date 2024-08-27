@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pub sub Pattern</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <h1>Pub/Sub Example</h1>
+    <div id="chat-container">
+      <div id="channels">
+        <div class="channel" data-channel="general">General</div>
+        <div class="channel" data-channel="sports">Sports</div>
+        <div class="channel" data-channel="technology">Technology</div>
+      </div>
+      <div id="chat">
+        <div id="chat-messages"></div>
+        <div id="chat-input">
+          <input type="text" id="message-input" placeholder="Type a message..." />
+          <button id="send-button">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
