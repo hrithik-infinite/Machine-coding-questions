@@ -26,19 +26,13 @@ Array.prototype.myMap = function (callBack) {
   return temp; // Return the new array with transformed values
 };
 
-// Print the custom myMap method to the console
-console.log(Array.prototype.myMap);
-
-// Print the built-in map function to compare with the custom one
-console.log(Array.prototype.map);
-
 // Use the custom myMap function to multiply each element of the array by 5
 const multiplyFive2 = arr.myMap((val) => {
-  return val * 5; // Custom myMap works similarly to the native map
+  return val * 6; // Custom myMap works similarly to the native map
 });
 
 // Print the results of the custom myMap method
-console.log(multiplyFive2);
+console.log("multiplyFive2" , multiplyFive2);
 
 // Begin polyfilling (creating a custom implementation) for the filter method
 console.log("Filter Prototype");
