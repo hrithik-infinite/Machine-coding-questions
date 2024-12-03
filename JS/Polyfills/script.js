@@ -32,7 +32,7 @@ const multiplyFive2 = arr.myMap((val) => {
 });
 
 // Print the results of the custom myMap method
-console.log("multiplyFive2" , multiplyFive2);
+console.log("multiplyFive2", multiplyFive2);
 
 // Begin polyfilling (creating a custom implementation) for the filter method
 console.log("Filter Prototype");
