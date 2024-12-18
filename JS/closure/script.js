@@ -159,7 +159,7 @@ function counter() {
 
   return {
     add,
-    getVal,
+    getVal
   }; // Returns an object exposing 'add' and 'getVal', but not '_counter'.
 }
 
@@ -180,7 +180,7 @@ var Module = (function () {
     publicMethod: function () {
       // Here we can call the private method
       console.log("Public");
-    },
+    }
   }; // Only 'publicMethod' is exposed, 'privateMethod' is kept private.
 })();
 Module.publicMethod(); // Logs "Public"

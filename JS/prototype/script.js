@@ -1,12 +1,7 @@
-// Function to log values to the console
-function c(val) {
-  console.log(val);
-}
-
 // Creating an object 'obj' with properties 'name' and 'age'
 let obj = {
   name: "Hrithik",
-  age: 24,
+  age: 24
 };
 
 // Logging the object, its prototype, and the base Object prototype
@@ -19,23 +14,23 @@ let num = 10;
 let name = "Hrithik";
 let bool = true;
 
-c(num); // Logs 10
-c(num.__proto__); // Logs the Number.prototype
+console.log(num); // Logs 10
+console.log(num.__proto__); // Logs the Number.prototype
 
-c(name); // Logs "Hrithik"
-c(name.__proto__); // Logs the String.prototype
+console.log(name); // Logs "Hrithik"
+console.log(name.__proto__); // Logs the String.prototype
 
-c(bool); // Logs true
-c(bool.__proto__); // Logs the Boolean.prototype
+console.log(bool); // Logs true
+console.log(bool.__proto__); // Logs the Boolean.prototype
 
 // Prototype chaining example
 let person = {
   name: "Hrithik",
-  age: 24,
+  age: 24
 };
 
 // Using toString method from Object.prototype
-c(person.toString()); // Logs "[object Object]"
+console.log(person.toString()); // Logs "[object Object]"
 
 // Overriding the toString method in another object 'person2'
 let person2 = {
@@ -43,11 +38,11 @@ let person2 = {
   age: 24,
   toString: () => {
     return "converted to string override";
-  },
+  }
 };
 
 // Using the overridden toString method
-c(person2.toString()); // Logs "converted to string override"
+console.log(person2.toString()); // Logs "converted to string override"
 
 // Prototype inheritance example
 
@@ -58,12 +53,12 @@ function Animal(name) {
 
 // Add a method 'sayName' to Animal's prototype
 Animal.prototype.sayName = function () {
-  c(`My name is ${this.name}`);
+  console.log(`My name is ${this.name}`);
 };
 
 // Create an instance of Animal
 let animal1 = new Animal("Tiger");
-c(animal1); // Logs the animal1 object
+console.log(animal1); // Logs the animal1 object
 animal1.sayName(); // Logs "My name is Tiger"
 
 // Define a constructor function 'Dog' that inherits from Animal
@@ -78,23 +73,23 @@ Dog.prototype.constructor = Dog;
 
 // Add a new method 'bark' to Dog's prototype
 Dog.prototype.bark = function () {
-  c("Woof!");
+  console.log("Woof!");
 };
 
 // Create an instance of Dog
 let dog1 = new Dog("Max", "Rottie");
-c(dog1); // Logs the dog1 object
+console.log(dog1); // Logs the dog1 object
 dog1.bark(); // Logs "Woof!"
 
 // Extending Array prototype with a custom method 'myArr'
 Array.prototype.myArr = function () {
-  c("This is my array " + this);
+  console.log("This is my array " + this);
 };
 
 // Create an array and use the custom method
 const arr = [1, 2, 3];
 arr.myArr(); // Logs "This is my array 1,2,3"
-c("__________________________________");
+console.log("__________________________________");
 
 // Ques 1: What will be the output of the following code?
 
@@ -130,7 +125,7 @@ car.drive(); // Logs "Driving a car"
 var animalPrototype = {
   sound: function () {
     console.log("Making a sound...");
-  },
+  }
 };
 
 // Create an object 'dog' with 'animalPrototype' as its prototype
@@ -140,7 +135,7 @@ var dog = Object.create(animalPrototype);
 var cat = {
   purr: function () {
     console.log("Purring...");
-  },
+  }
 };
 
 // Change the prototype of 'dog' to 'cat'
@@ -207,11 +202,11 @@ var obj2 = {
   a: 1,
   b: {
     c: 2,
-    d: [3, 4],
-  },
+    d: [3, 4]
+  }
 };
 
 // Deep clone the object 'obj2'
 var clonedObj = deepClone(obj2);
 clonedObj.b.c = 3; // Modify the clone, not the original
-c(clonedObj); // Logs the modified clone
+console.log(clonedObj); // Logs the modified clone
