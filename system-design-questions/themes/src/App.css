@@ -1,0 +1,21 @@
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+[data-theme="dark"] {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar div {
+  display: flex;
+  gap: 20px;
+}
