@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProgressBar = ({ value = 0 }) => {
   const [percent, setPercent] = useState(value);
