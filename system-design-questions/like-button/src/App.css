@@ -1,0 +1,9 @@
+.btnClass {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnClass button {
+  height: 40px;
+  width: 300px;
+}
