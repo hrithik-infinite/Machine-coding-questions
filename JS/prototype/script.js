@@ -1,7 +1,7 @@
 // Creating an object 'obj' with properties 'name' and 'age'
 let obj = {
   name: "Hrithik",
-  age: 24
+  age: 24,
 };
 
 // Logging the object, its prototype, and the base Object prototype
@@ -26,7 +26,7 @@ console.log(bool.__proto__); // Logs the Boolean.prototype
 // Prototype chaining example
 let person = {
   name: "Hrithik",
-  age: 24
+  age: 24,
 };
 
 // Using toString method from Object.prototype
@@ -38,7 +38,7 @@ let person2 = {
   age: 24,
   toString: () => {
     return "converted to string override";
-  }
+  },
 };
 
 // Using the overridden toString method
@@ -125,7 +125,7 @@ car.drive(); // Logs "Driving a car"
 var animalPrototype = {
   sound: function () {
     console.log("Making a sound...");
-  }
+  },
 };
 
 // Create an object 'dog' with 'animalPrototype' as its prototype
@@ -135,7 +135,7 @@ var dog = Object.create(animalPrototype);
 var cat = {
   purr: function () {
     console.log("Purring...");
-  }
+  },
 };
 
 // Change the prototype of 'dog' to 'cat'
@@ -202,8 +202,8 @@ var obj2 = {
   a: 1,
   b: {
     c: 2,
-    d: [3, 4]
-  }
+    d: [3, 4],
+  },
 };
 
 // Deep clone the object 'obj2'

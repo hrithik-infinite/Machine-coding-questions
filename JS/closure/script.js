@@ -12,7 +12,7 @@ function subscribe() {
   var name = "Agarwal"; // Local scope: Function scope for 'subscribe'
 
   function displayName() {
-    console.warn(name); // Closure is created here. 'displayName' forms a closure and remembers the 'name' from 'subscribe'.
+    console.log(name); // Closure is created here. 'displayName' forms a closure and remembers the 'name' from 'subscribe'.
   }
 
   displayName(); // Logs "Agarwal" because 'displayName' uses the 'name' from its closure, not the global scope.
@@ -159,7 +159,7 @@ function counter() {
 
   return {
     add,
-    getVal
+    getVal,
   }; // Returns an object exposing 'add' and 'getVal', but not '_counter'.
 }
 
@@ -180,7 +180,7 @@ var Module = (function () {
     publicMethod: function () {
       // Here we can call the private method
       console.log("Public");
-    }
+    },
   }; // Only 'publicMethod' is exposed, 'privateMethod' is kept private.
 })();
 Module.publicMethod(); // Logs "Public"

@@ -79,9 +79,7 @@ console.log("_________________");
 // Converts a function f(a,b,c) into f(a)(b)(c)
 function curry(func) {
   return function curriedFcn(...args) {
-    console.log("Args->", args); // Logs the current arguments received
-    console.log("func->", func); // Logs the original function
-
+    console.log("Args->", args, "func->", func, "func.leng=>" , func.length, "args.len->" , args.length); // Logs the current arguments received
     if (func.length <= args.length) {
       // If enough arguments are provided, invoke the function
       return func(...args);

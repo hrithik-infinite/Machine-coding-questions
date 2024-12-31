@@ -5,7 +5,7 @@ const arr = [1, 2, 3, 4, 5];
 console.log(arr);
 
 // Use the native map method to multiply each element of the array by 5
-const multiplyFive = arr.map((val) => {
+const multiplyFive = arr.map(val => {
   return val * 5; // Return each value multiplied by 5
 });
 
@@ -19,6 +19,7 @@ console.log(Array.prototype); // Print the Array prototype to the console for re
 // Create a custom map function and add it to Array's prototype
 Array.prototype.myMap = function (callBack) {
   let temp = []; // Initialize an empty array to store results
+  console.log("this ->", this);
   for (let i = 0; i < this.length; i++) {
     // Loop through each element in the array
     temp.push(callBack(this[i], i, this)); // Call the callback function with current element, index, and array
@@ -27,7 +28,7 @@ Array.prototype.myMap = function (callBack) {
 };
 
 // Use the custom myMap function to multiply each element of the array by 5
-const multiplyFive2 = arr.myMap((val) => {
+const multiplyFive2 = arr.myMap(val => {
   return val * 6; // Custom myMap works similarly to the native map
 });
 
@@ -38,7 +39,7 @@ console.log("multiplyFive2", multiplyFive2);
 console.log("Filter Prototype");
 
 // Use the native filter method to filter out elements greater than 3
-const f1 = arr.filter((val) => val > 3);
+const f1 = arr.filter(val => val > 3);
 
 // Print the filtered array (values greater than 3)
 console.log(f1);
@@ -57,7 +58,7 @@ Array.prototype.myFilter = function (callBack) {
 };
 
 // Use the custom myFilter method to filter out elements greater than 3
-const f2 = arr.myFilter((val) => val > 3);
+const f2 = arr.myFilter(val => val > 3);
 
 // Print the results of the custom myFilter method
 console.log(f2);
@@ -68,7 +69,6 @@ const r1 = arr.reduce((acc, curr, i, arr) => {
   return acc + curr;
 }, 0);
 console.log(r1);
-
 Array.prototype.myReduce = function (callBack, initVal) {
   var accum = initVal;
   for (let i = 0; i < this.length; i++) {
