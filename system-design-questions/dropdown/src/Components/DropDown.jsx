@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const DropDown = ({ title, options = [], onSelect }) => {
+const DropDown = ({ options = [], onSelect }) => {
   const [selectedOption, setSelectedOption] = useState("Select an option");
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => {
-    setIsOpen((prev) => !prev);
+    setIsOpen(prev => !prev);
   };
-  const handleOptionClick = (option) => {
+  const handleOptionClick = option => {
     setSelectedOption(option);
     setIsOpen(false);
     onSelect(option);
