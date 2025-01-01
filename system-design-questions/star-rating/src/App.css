@@ -1,0 +1,9 @@
+.stars {
+  font-size: 40px;
+}
+.star_symbol {
+  cursor: pointer;
+}
+.star_symbol.active {
+  color: orange;
+}

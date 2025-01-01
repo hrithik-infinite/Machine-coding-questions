@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 const Pagination = ({ totalPages, page, setPage, maxVisiblePages = 5 }) => {
-  const selectPageHandler = (e) => {
+  const selectPageHandler = e => {
     if (e >= 1 && e <= totalPages) setPage(e);
   };
   const renderPageNumbers = () => {
