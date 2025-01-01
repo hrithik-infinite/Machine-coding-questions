@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const StarRating = ({ size, onChange, rating }) => {
   return (
     <div className="stars">
