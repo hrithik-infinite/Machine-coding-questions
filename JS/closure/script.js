@@ -101,8 +101,9 @@ function time2() {
     console.log(a[index]); // This function forms a closure over the precomputed array 'a', reusing it for multiple calls.
   };
 }
-
+console.time("cccccccc");
 const closure = time2(); // 'closure' maintains access to the array 'a' through the closure.
+console.timeEnd("cccccccc");
 console.time("6");
 closure(6); // Faster since 'a' is already computed and accessed via closure.
 console.timeEnd("6");

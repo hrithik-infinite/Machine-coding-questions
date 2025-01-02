@@ -14,7 +14,8 @@ body {
   padding: 10px;
   border-radius: 5px;
 }
-#channels, #chat {
+#channels,
+#chat {
   flex: 1;
   padding: 10px;
 }
