@@ -18,7 +18,7 @@ class Teacher {
 
 const hrithik = new Teacher("Hrithik", "My YT Channel");
 const hrithik2 = new Teacher("Agatwal", "My YT Channel", 20);
-
+c(hrithik.name);
 c(hrithik);
 c(hrithik.intro());
 c(hrithik.like());
@@ -30,6 +30,22 @@ c(hrithik2.like());
 c(hrithik2.like());
 c(hrithik2.like());
 
+class TeacherPri {
+  #priName;
+  constructor(name) {
+    this.name = name;
+    this.#priName = name;
+  }
+  get() {
+    return `this.name -> ${this.name}`;
+  }
+}
+const hri3 = new TeacherPri("hrithik");
+c("hri3_______________________________");
+c(hri3.get());
+c(hri3.name);
+// c(hri3.#priName);
+c("hri3_______________________________");
 // converting to function constructor
 
 function Teacher2(name, channel, likes = 0) {
