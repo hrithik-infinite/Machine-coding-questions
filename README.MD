@@ -7,58 +7,82 @@ Welcome to the **Machine Coding Questions** repository! This collection features
 ## 📚 JavaScript Basics
 
 1. **Closures**: Deep dive into the concept of closures in JavaScript.
-2. **This Keyword**: Detailed exploration of the `this` keyword and its context in JavaScript.
-3. **Debounce and Throttle**: Practical implementations and use cases.
-4. **Currying**: Understanding and applying function currying in JavaScript.
-5. **Event Propagation**: Explanation of bubbling, capturing, and delegation.
-6. **Prototypes**: Exploring prototypes and inheritance in JavaScript.
-7. **Call, Apply, and Bind**: Demonstration of method borrowing and function binding.
-8. **Polyfills**: Custom implementations of commonly used JavaScript functions.
-9. **Pub-Sub Pattern**: Building a publish-subscribe model.
+2. **This Keyword**: Understanding the `this` keyword and its various contexts.
+3. **Debounce and Throttle**: Implementing performance optimizations in JavaScript.
+4. **Currying**: Function transformation and real-world applications.
+5. **Event Propagation**: Bubbling, capturing, and delegation explained.
+6. **Prototypes**: Understanding JavaScript prototypal inheritance.
+7. **Call, Apply, and Bind**: Function borrowing and context binding.
+8. **Polyfills**: Custom implementations of JavaScript functions.
+9. **Pub-Sub Pattern**: Creating a publish-subscribe messaging system.
+10. **Class and Constructors**: JavaScript classes and object-oriented principles.
 
 ---
 
 ## 🛠 Vanilla JavaScript
 
-1. **To-Do List**: Task management with a to-do list application.
-2. **Holy Grail Layout**: Classic layout implementation using CSS and JavaScript.
-3. **Tabs**: Tabbed navigation component for content organization.
-4. **Accordion**: Expandable/collapsible sections for content visibility toggling.
-5. **Pagination**: Navigating pages of data without truncation.
-6. **Config-Driven Color Boxes**: Dynamic color box generation from configuration.
-7. **Password Generator**: Generate secure passwords using JavaScript.
+1. **To-Do List**: A simple task management application.
+2. **Holy Grail Layout**: Implementing a flexible CSS layout.
+3. **Tabs**: A dynamic tabbed UI component.
+4. **Accordion**: Expandable/collapsible sections.
+5. **Pagination**: Handling large datasets with pagination.
+6. **Config-Driven Color Boxes**: Generating UI based on configurations.
+7. **Password Generator**: Secure password generation.
 
 ---
 
 ## ⚛️ React JS
 
-1. **Carousel**: Interactive image/content carousel component.
-2. **Pagination (with truncation)**: Improved UX with truncated pagination.
-3. **Star Rating Component**: User feedback collection with star ratings.
-4. **Light & Dark Mode**: Theme toggling functionality.
-5. **Progress Bar**: Visual progress representation.
-6. **Tic Tac Toe**: Classic game implementation with logic and reset options.
-7. **Advanced Tic Tac Toe**: Customizable board size for the Tic Tac Toe game.
-8. **Toast Notifications**: Alerting users with dismissible notifications.
-9. **Auto-Suggestions for Search**: Input field with intelligent suggestions.
-10. **Config-Driven Forms**: Dynamic forms generated from configurations.
-11. **Memory Game**: Match pairs of cards to test memory.
-12. **Dropdown**: Dynamic dropdown component with filtering.
+1. **Advance Tic-Tac-Toe**: Enhanced Tic-Tac-Toe game with AI strategies.
+2. **Autocomplete**: A search input with real-time suggestions.
+3. **Autosuggest Search**: Efficient searching with caching mechanisms.
+4. **Carousel**: A responsive image slider.
+5. **Config-Driven Form**: A dynamic form generator.
+6. **Dark/Light Mode**: Theme switching with React Context.
+7. **Memory Game**: A classic memory matching game.
+8. **Pagination Component**: Handling paginated data in React.
+9. **Progress Bar**: A dynamic progress indicator.
+10. **Star Rating**: Interactive star rating component.
+11. **Toast Notifications**: A notification system in React.
 
 ---
 
-## 🏗️ System Design Components
+## 🏗 System Design Components
 
-1. **Themes**: Theme-based application structure with context management.
-2. **Like Button**: Reusable like button component.
-3. **Popover**: Tooltip-like UI element for additional context.
-4. **Modal**: Overlay modal component for dialog boxes.
-5. **Countdown Timer**: Interactive timer with hooks for customization.
-6. **Accordion**: Enhanced accordion built with React.
-7. **Password Generator**: React implementation for secure password generation.
+1. **Accordion**: Expandable sections in system design.
+2. **Countdown Timer**: A configurable countdown timer.
+3. **Dropdown**: A reusable dropdown component.
+4. **Like Button**: A social media-style like button.
+5. **Modal**: A reusable modal component.
+6. **Password Generator**: Secure password generation.
+7. **Pop-Over**: A UI popover component.
+8. **Progress Bar**: Progress tracking component.
+9. **Star Rating**: A rating system for products/services.
+10. **Themes (Dark/Light Mode)**: Implementing theming in an application.
+11. **To-Do List**: A task management system.
 
 ---
 
-Feel free to explore, contribute, and enhance these projects. Your feedback and contributions are always welcome!
+## 🚀 How to Use
 
-Happy coding! 😊
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/hrithik-infinite/Machine-coding-questions
+   ```
+
+2. Navigate to the project:
+
+```sh
+cd Machine-coding-questions
+```
+
+3. Open any folder to explore the implementation.
+
+4. For React projects:
+
+```sh
+cd React/project-name
+npm install
+npm start
+```
