@@ -73,16 +73,16 @@ Welcome to the **Machine Coding Questions** repository! This collection features
 
 2. Navigate to the project:
 
-```sh
-cd Machine-coding-questions
-```
+   ```sh
+   cd Machine-coding-questions
+   ```
 
 3. Open any folder to explore the implementation.
 
 4. For React projects:
 
-```sh
-cd React/project-name
-npm install
-npm start
-```
+   ```sh
+   cd React/project-name
+   npm install
+   npm start
+   ```
