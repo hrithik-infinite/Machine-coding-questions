@@ -1,7 +1,7 @@
 import useTicTacToe from "../hooks/use-tic-tac-toe";
 
 function TicTacToe({ boardSize = 3 }) {
-  console.log(boardSize)
+  console.log(boardSize);
   const { board, handleClick, getStatusMessage, resetGame } = useTicTacToe(boardSize);
   return (
     <div className="game" style={{ "--board-size": boardSize }}>

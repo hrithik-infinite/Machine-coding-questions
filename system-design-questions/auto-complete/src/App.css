@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.inputBox {
+  width: 350px;
+  padding: 10px;
+}
+.res-list {
+  list-style: none;
+  cursor: pointer;
+}
+.suggestionList {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid black;
+  max-height: 400px;
+  width: 350px;
+  overflow-y: scroll;
+}
+.res-list li:hover {
+  background-color: antiquewhite;
+}
+.res-list li {
+  padding: 2px;
+}
