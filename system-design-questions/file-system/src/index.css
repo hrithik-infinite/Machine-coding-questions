@@ -1,0 +1,10 @@
+.container {
+  text-align: left;
+  padding-left: 20px;
+}
+.btn {
+  cursor: pointer;
+}
+.icon-btn {
+  cursor: pointer;
+}

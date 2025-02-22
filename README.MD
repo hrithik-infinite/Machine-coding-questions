@@ -60,6 +60,7 @@ Welcome to the **Machine Coding Questions** repository! This collection features
 9. **Star Rating**: A rating system for products/services.
 10. **Themes (Dark/Light Mode)**: Implementing theming in an application.
 11. **To-Do List**: A task management system.
+12. **File/Folder Structure**: A File Folder structure like VS Code
 
 ---
 
