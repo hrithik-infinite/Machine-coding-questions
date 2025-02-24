@@ -11,10 +11,10 @@ a.then((x) => {
 // ============================
 
 // Creating standard Promises
-let p1 = new Promise((resolve, reject) => resolve("This promise resolves"));
+let pa = new Promise((resolve, reject) => resolve("This promise resolves"));
 let p2 = new Promise((resolve, reject) => reject("This promise rejects"));
 
-p1.then((data) => console.log(data)); // Output - This promise resolves
+pa.then((data) => console.log(data)); // Output - This promise resolves
 
 p2.catch((err) => console.log(err)); // Output - This promise rejects
 
