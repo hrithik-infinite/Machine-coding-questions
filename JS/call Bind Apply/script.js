@@ -1,89 +1,105 @@
-const obj = { name: "hrithik" }; // Create an object with a property 'name'
+// Create an object with a property 'name'
+const obj = { name: "hrithik" };
 
-// Define a function that uses 'this' to refer to the context object and takes an 'age' argument
+/**
+ * Function that uses 'this' and takes an argument 'age'.
+ * Note: The 'this' depends on how the function is called.
+ */
 function sayHello(age) {
   return "Hello " + this.name + " is " + age;
 }
 
-// Invoke the function without setting 'this', so 'this.name' and 'age' are undefined
-console.log(sayHello()); // Output: "Hello undefined is undefined"
+// Calling without setting 'this', so 'this.name' is undefined and age is undefined
+console.log("Direct call (no binding):", sayHello());
+// Output: "Hello undefined is undefined"
 
-// Use 'call' to invoke 'sayHello', setting 'this' to 'obj' and passing 24 as the argument
-console.log(sayHello.call(obj, 24));
+// Using `call` to set `this` to `obj` and pass 'age' directly as argument
+console.log("Using call():", sayHello.call(obj, 24));
 // Output: "Hello hrithik is 24"
-// 'call' sets 'this' to 'obj', so 'this.name' is 'hrithik', and 'age' is 24
 
-// Use 'apply' to invoke 'sayHello', setting 'this' to 'obj' and passing arguments as an array
-console.log(sayHello.apply(obj, [24]));
+// Using `apply` to set `this` to `obj` but pass arguments in an array
+console.log("Using apply():", sayHello.apply(obj, [24]));
 // Output: "Hello hrithik is 24"
-// 'apply' also sets 'this' to 'obj' and uses the array [24] for arguments
 
-// Use 'bind' to create a new function with 'this' bound to 'obj'
-// 'bind' returns a new function that, when called, has 'this' set to 'obj'
+// Using `bind` to permanently bind `this` to `obj`
+// Unlike call/apply, bind does NOT invoke the function immediately
 const bindFcn = sayHello.bind(obj);
-console.log(bindFcn);
-// Output: function bound to 'obj', but not yet invoked
+console.log("Result of bind (before calling):", bindFcn);
+// Logs the bound function itself
 
-// Call the bound function with the argument 24
-console.log(bindFcn(24));
+// Calling the bound function later with argument 'age'
+console.log("Calling bind function:", bindFcn(24));
 // Output: "Hello hrithik is 24"
-// 'bind' sets 'this' to 'obj' permanently, so 'bindFcn' always refers to 'obj'
 
+// Another function for practice
 function sayHi(age) {
   return `${this.name} is ${age}`;
 }
 
-// Using `call` to invoke the function immediately
-console.log(sayHi.call(obj, 24));
+// Using call - immediate invocation
+console.log("sayHi with call():", sayHi.call(obj, 24));
 // Output: "hrithik is 24"
-// Explanation: `call` sets `this` to `obj` and invokes `sayHi` immediately with 24 as the argument.
 
-// Using `bind` to create a new function
-console.log(sayHi.bind(obj, 24));
+// Using bind - returns a bound function (doesn't call immediately)
+console.log("sayHi with bind():", sayHi.bind(obj, 24));
 // Output: [Function: bound sayHi]
-// Explanation: `bind` returns a new function that has `this` permanently set to `obj`, and 24 as the first argument.
-// It doesn't invoke the function immediately; it just returns the bound function.
-const age = 10; // Global variable `age`
+const boundSayHi = sayHi.bind(obj);
+console.log("Calling bound sayHi():", boundSayHi(24));
+// Output: "hrithik is 24"
 
+// Example showing difference in `this` binding within an object
 const person = {
   name: "hrithik",
-  age: 20, // `age` property of `person` object
+  age: 20,
   getAge: function () {
-    return this.age; // `this` refers to the `person` object when `getAge` is called as a method of `person`
-  },
+    return this.age; // 'this' refers to 'person'
+  }
 };
 
-const person2 = { age: 23 }; // Another object with an `age` property
-
-// Calling `getAge` method on `person` object
-console.log(person.getAge());
+// Calling method directly on person object
+console.log("person.getAge():", person.getAge());
 // Output: 20
-// Explanation: `this` refers to `person`, so `this.age` is 20.
 
-// Using `call` to change `this` context to `person2`
-console.log(person.getAge.call(person2));
+const person2 = { age: 23 };
+
+// Using `call` to invoke getAge with `this` pointing to person2
+console.log("getAge.call(person2):", person.getAge.call(person2));
 // Output: 23
-// Explanation: `call` sets `this` to `person2`, so `this.age` becomes 23.
 
-// outpup
-var status = "a"; // Global variable `status`
+// Another practical example (inside setTimeout)
+var status = "a"; // Global status (in browsers it's window.status)
 
 setTimeout(() => {
-  const status = "b"; // Local variable `status` within the `setTimeout` callback
+  const status = "b"; // Local status inside setTimeout
 
   const data = {
-    status: "c", // `status` property of `data` object
+    status: "c", // Object property status
     getStatus() {
-      return this.status; // `this` refers to `data` object when `getStatus` is called as a method of `data`
-    },
+      return this.status; // this refers to data when called as data.getStatus()
+    }
   };
 
-  console.log(data.getStatus());
+  // Calling directly - this refers to 'data'
+  console.log("data.getStatus():", data.getStatus());
   // Output: "c"
-  // Explanation: `this` refers to the `data` object, so `this.status` is "c".
 
-  console.log(data.getStatus.call(this));
-  // Output: "a"
-  // Explanation: `call` sets `this` to the surrounding `this` context of the arrow function,
-  // which refers to the global `this` in non-strict mode (where `this.status` is "a").
+  // Using call - manually setting `this` to outer context (`this` of setTimeout callback)
+  // In browsers, it's window; in node, it's {} or undefined
+  console.log("data.getStatus.call(this):", data.getStatus.call(this));
+  // Output: "a" (outer/global status)
 }, 0);
+
+/**
+ * Summary Reference:
+ * -------------------
+ * call()  -> Call the function immediately with `this` set to first argument.
+ * apply() -> Same as call but arguments are passed as an array.
+ * bind()  -> Returns a new function with permanently bound `this` (doesn't call immediately).
+ */
+
+// Quick table recap
+console.table([
+  { Method: "call", WhenCalled: "Immediately", HowThisIsSet: "First argument", ArgumentsFormat: "Comma-separated" },
+  { Method: "apply", WhenCalled: "Immediately", HowThisIsSet: "First argument", ArgumentsFormat: "Array" },
+  { Method: "bind", WhenCalled: "Later (when invoked)", HowThisIsSet: "First argument (permanent)", ArgumentsFormat: "Comma-separated (when actually calling)" }
+]);
