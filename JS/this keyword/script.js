@@ -23,18 +23,22 @@ const student = {
   printName: function () {
     console.log("Inside student.printName:", this);
     console.log("Inside student.printName (this.name):", this.name);
-  },
+  }
 };
 student.printName();
 // Here, `this` refers to the object `student`.
 // `this.name` refers to the property `name` of the object `student`, which is "Hrithik".
 
 const student2 = {
-  name: "Agarwal",
+  name: "Agarwal"
 };
 
-// student2.printName();
-// This will throw an error because `printName` is not a method of `student2`.
+try {
+  // This will throw an error because `printName` is not a method of `student2`.
+  student2.printName();
+} catch (e) {
+  console.error(e);
+}
 
 // In order to use `printName` with `student2`, use the `call` method:
 student.printName.call(student2);
@@ -50,7 +54,7 @@ const obj = {
     console.log("Inside obj.x (arrow function):", this);
     // In an arrow function, `this` does not refer to the object `obj`.
     // Instead, `this` refers to its lexical scope, which is the global scope in this case.
-  },
+  }
 };
 
 obj.x(); // In strict mode, this will log undefined (lexical scope is global scope)
@@ -60,7 +64,7 @@ const obj2 = {
   x: function () {
     console.log("Inside obj2.x (normal function):", this);
     // In a normal function, `this` refers to the object `obj2`.
-  },
+  }
 };
 obj2.x();
 
@@ -73,7 +77,7 @@ const obj3 = {
       // Therefore, `this` refers to `obj3` because `x` is a method of `obj3`.
     };
     y();
-  },
+  }
 };
 
 obj3.x();
