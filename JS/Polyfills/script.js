@@ -1,82 +1,81 @@
-// Define an array of numbers from 1 to 5
+// Original array
 const arr = [1, 2, 3, 4, 5];
+console.log("Original Array:", arr);
 
-// Print the original array to the console
-console.log(arr);
+// ==================
+// Native map example
+// ==================
+const multiplyFive = arr.map((val) => val * 5);
+console.log("Native Map (x5):", multiplyFive);
 
-// Use the native map method to multiply each element of the array by 5
-const multiplyFive = arr.map(val => {
-  return val * 5; // Return each value multiplied by 5
-});
-
-// Print the array with each value multiplied by 5
-console.log(multiplyFive);
-
-// Begin creating a custom implementation (polyfill) for the map method
+// ==================
+// Polyfill for map
+// ==================
 console.log("Polyfill for map");
-console.log(Array.prototype); // Print the Array prototype to the console for reference
 
-// Create a custom map function and add it to Array's prototype
-Array.prototype.myMap = function (callBack) {
-  let temp = []; // Initialize an empty array to store results
-  console.log("this ->", this);
+// Custom map attached to Array.prototype
+Array.prototype.myMap = function (callback) {
+  let result = [];
   for (let i = 0; i < this.length; i++) {
-    // Loop through each element in the array
-    temp.push(callBack(this[i], i, this)); // Call the callback function with current element, index, and array
+    result.push(callback(this[i], i, this));
   }
-  return temp; // Return the new array with transformed values
+  return result;
 };
 
-// Use the custom myMap function to multiply each element of the array by 5
-const multiplyFive2 = arr.myMap(val => {
-  return val * 6; // Custom myMap works similarly to the native map
-});
+// Using custom myMap
+const multiplySix = arr.myMap((val) => val * 6);
+console.log("Custom myMap (x6):", multiplySix);
 
-// Print the results of the custom myMap method
-console.log("multiplyFive2", multiplyFive2);
-
-// Begin polyfilling (creating a custom implementation) for the filter method
+// ==================
+// Native filter example
+// ==================
 console.log("Filter Prototype");
 
-// Use the native filter method to filter out elements greater than 3
-const f1 = arr.filter(val => val > 3);
+const filtered = arr.filter((val) => val > 3);
+console.log("Native Filter (>3):", filtered);
 
-// Print the filtered array (values greater than 3)
-console.log(f1);
-
-// Create a custom filter function and add it to Array's prototype
-Array.prototype.myFilter = function (callBack) {
-  let temp = []; // Initialize an empty array to store results
+// ==================
+// Polyfill for filter
+// ==================
+Array.prototype.myFilter = function (callback) {
+  let result = [];
   for (let i = 0; i < this.length; i++) {
-    // Loop through each element in the array
-    // If the callback returns true (i.e., the condition is met), push the value to temp
-    if (callBack(this[i])) {
-      temp.push(this[i]);
+    if (callback(this[i], i, this)) {
+      result.push(this[i]);
     }
   }
-  return temp; // Return the new array with filtered values
+  return result;
 };
 
-// Use the custom myFilter method to filter out elements greater than 3
-const f2 = arr.myFilter(val => val > 3);
+// Using custom myFilter
+const customFiltered = arr.myFilter((val) => val > 3);
+console.log("Custom myFilter (>3):", customFiltered);
 
-// Print the results of the custom myFilter method
-console.log(f2);
-
+// ==================
+// Native reduce example
+// ==================
 console.log("Reduce Prototype");
 
-const r1 = arr.reduce((acc, curr, i, arr) => {
-  return acc + curr;
-}, 0);
-console.log(r1);
-Array.prototype.myReduce = function (callBack, initVal) {
-  var accum = initVal;
+const sum = arr.reduce((acc, curr) => acc + curr, 0);
+console.log("Native Reduce (Sum):", sum);
+
+// ==================
+// Polyfill for reduce
+// ==================
+Array.prototype.myReduce = function (callback, initialValue) {
+  let accumulator = initialValue;
+
   for (let i = 0; i < this.length; i++) {
-    accum = accum ? callBack(accum, this[i], i, this) : this[i];
+    if (accumulator !== undefined) {
+      accumulator = callback(accumulator, this[i], i, this);
+    } else {
+      accumulator = this[i]; // Handle case where no initialValue is passed
+    }
   }
-  return accum;
+
+  return accumulator;
 };
-const r2 = arr.myReduce((acc, curr, i, arr) => {
-  return acc + curr;
-}, 0);
-console.log(r2);
+
+// Using custom myReduce
+const customSum = arr.myReduce((acc, curr) => acc + curr, 0);
+console.log("Custom myReduce (Sum):", customSum);
