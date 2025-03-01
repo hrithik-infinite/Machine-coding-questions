@@ -1,64 +1,53 @@
-//Event bubbling
-// const div = document.querySelector("div");
-// const form = document.querySelector("form");
-// const button = document.querySelector("button");
+// ============ Bubbling (div > section > button) ============
+// Event flows from button to section to div (inner to outer)
 
-// div.addEventListener("click", function () {
-//   console.log("div");
-// });
-// form.addEventListener("click", function () {
-//   console.log("form");
-// });
-// button.addEventListener("click", function (event) {
-//   event.preventDefault();
-//   console.log("button");
-// });
+const bubbleDiv = document.querySelector(".bubble-div");
+const bubbleSection = document.querySelector(".bubble-section");
+const bubbleButton = document.querySelector(".bubble-button");
 
-// targets
-// const div = document.querySelector("div");
-// const form = document.querySelector("form");
-// const button = document.querySelector("button");
+bubbleDiv.addEventListener("click", () => console.log("BUBBLE: DIV clicked (bubbling phase)"));
+bubbleSection.addEventListener("click", () => console.log("BUBBLE: SECTION clicked (bubbling phase)"));
+bubbleButton.addEventListener("click", () => console.log("BUBBLE: BUTTON clicked (bubbling phase)"));
 
-// div.addEventListener("click", func);
-// form.addEventListener("click", func);
-// button.addEventListener("click", func);
+// ============ Capturing (nav > article > button) ============
+// Event flows from nav to article to button (outer to inner)
 
-// function func(event) {
-//   event.preventDefault();
-//   console.log("currentTarget " + event.currentTarget.tagName, " target =" + event.target.tagName, " this = " + this.tagName);
-// }
+const captureNav = document.querySelector(".capture-nav");
+const captureArticle = document.querySelector(".capture-article");
+const captureButton = document.querySelector(".capture-button");
 
-// event trickling
-// const div = document.querySelector("div");
-// const form = document.querySelector("form");
-// const button = document.querySelector("button");
+captureNav.addEventListener("click", () => console.log("CAPTURE: NAV clicked (capturing phase)"), { capture: true });
+captureArticle.addEventListener("click", () => console.log("CAPTURE: ARTICLE clicked (capturing phase)"), { capture: true });
+captureButton.addEventListener("click", () => console.log("CAPTURE: BUTTON clicked (capturing phase)"), { capture: true });
 
-// div.addEventListener("click", func, { capture: true });
-// form.addEventListener("click", func, { capture: true });
-// button.addEventListener("click", func, { capture: true });
+// ============ Stop Propagation (aside > figure > button) ============
+// Button stops propagation - figure and aside won’t trigger
 
-// function func(event) {
-//   event.preventDefault();
-//   console.log("currentTarget " + event.currentTarget.tagName, " target =" + event.target.tagName, " this = " + this.tagName);
-// }
+const stopAside = document.querySelector(".stop-aside");
+const stopFigure = document.querySelector(".stop-figure");
+const stopButton = document.querySelector(".stop-button");
 
-// stop Propogation
-const div = document.querySelector("div");
-const form = document.querySelector("form");
-const button = document.querySelector("button");
-div.addEventListener("click", function (e) {
+stopAside.addEventListener("click", () => console.log("STOP: ASIDE clicked"));
+stopFigure.addEventListener("click", () => console.log("STOP: FIGURE clicked"));
+stopButton.addEventListener("click", (e) => {
   e.stopPropagation();
-  console.log("div");
-});
-form.addEventListener("click", function (e) {
-  e.stopPropagation();
-  console.log("form");
-});
-button.addEventListener("click", function (e) {
-  e.stopPropagation();
-  e.preventDefault();
-  console.log("button");
+  console.log("STOP: BUTTON clicked (Propagation stopped)");
 });
 
+// ============ Event Delegation (ul > li) ============
+// Single listener on <ul>, works for all <li> (even future ones)
 
-//event delegation
+const list = document.querySelector(".delegation-list");
+const addItemBtn = document.querySelector(".add-item-btn");
+
+list.addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    alert(`You clicked: ${e.target.innerText}`);
+  }
+});
+
+addItemBtn.addEventListener("click", () => {
+  const newItem = document.createElement("li");
+  newItem.textContent = `Item ${list.children.length + 1}`;
+  list.appendChild(newItem);
+});

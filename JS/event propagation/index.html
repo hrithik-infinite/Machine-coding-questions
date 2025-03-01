@@ -1,19 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div>
-      DIV
-      <form action="">
-        FORM
-        <button>Button</button>
-      </form>
-    </div>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <title>Event Propagation & Delegation Examples</title>
+  <style>
+    div,
+    section,
+    article,
+    ul,
+    li,
+    button {
+      padding: 15px;
+      margin: 5px;
+      border: 2px solid #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Event Propagation & Delegation Demo (Using Different Elements)</h1>
+
+  <!-- Bubbling Example -->
+  <h2>Bubbling (div > section > button)</h2>
+  <div class="bubble-div">
+    DIV (Bubble)
+    <section class="bubble-section">
+      SECTION (Bubble)
+      <button class="bubble-button">Bubble Button</button>
+    </section>
+  </div>
+
+  <!-- Capturing Example -->
+  <h2>Capturing (nav > article > button)</h2>
+  <nav class="capture-nav">
+    NAV (Capture)
+    <article class="capture-article">
+      ARTICLE (Capture)
+      <button class="capture-button">Capture Button</button>
+    </article>
+  </nav>
+
+  <!-- Stop Propagation Example -->
+  <h2>Stop Propagation (aside > figure > button)</h2>
+  <aside class="stop-aside">
+    ASIDE (Stop Propagation)
+    <figure class="stop-figure">
+      FIGURE (Stop Propagation)
+      <button class="stop-button">Stop Propagation Button</button>
+    </figure>
+  </aside>
+
+  <!-- Event Delegation Example -->
+  <h2>Event Delegation (ul > li)</h2>
+  <ul class="delegation-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <button class="add-item-btn">Add New Item</button>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
