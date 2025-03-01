@@ -1,49 +1,85 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.querySelector(".clickBtn");
-  const btn_press = document.querySelector(".incClick");
-  const btn_trig = document.querySelector(".incTrig");
-  let count = 0;
-  let trigered = 0;
+  // 📍 Selectors for debounce demo
+  const btnDebounce = document.querySelector(".clickBtn");
+  const btnDebounceCount = document.querySelector(".incClick");
+  const btnDebounceTriggered = document.querySelector(".incTrig");
 
+  // 📍 Counters
+  let debounceClickCount = 0;
+  let debounceTriggeredCount = 0;
+
+  // --------------------------------------------
+  // Debounce Implementation
+  // --------------------------------------------
+  function debounce(func, delay) {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer); // Clear existing timer (reset)
+      timer = setTimeout(() => {
+        func.apply(this, args); // Execute after delay
+      }, delay);
+    };
+  }
+
+  // Debounced Function - updates triggered count after 500ms inactivity
+  const debouncedTrigger = debounce(() => {
+    btnDebounceTriggered.innerHTML = ++debounceTriggeredCount;
+  }, 500);
+
+  // Click Event Handler (Debounce Example)
+  btnDebounce.addEventListener("click", function () {
+    btnDebounceCount.innerHTML = ++debounceClickCount; // Immediate click count
+    debouncedTrigger(); // Delayed trigger count (debounced)
+  });
+
+  // --------------------------------------------
+  // 📍 Selectors for throttle demo
+  const btnThrottle = document.querySelector(".clickBtn1");
+  const btnThrottleCount = document.querySelector(".incClick1");
+  const btnThrottleTriggered = document.querySelector(".incTrig1");
+
+  // 📍 Counters
+  let throttleClickCount = 0;
+  let throttleTriggeredCount = 0;
+
+  // --------------------------------------------
+  // Throttle Implementation
+  // --------------------------------------------
   function throttle(func, interval) {
     let lastCall = 0;
     return function (...args) {
       const now = Date.now();
       if (now - lastCall >= interval) {
         lastCall = now;
-        func.apply(this, args);
+        func.apply(this, args); // Execute if enough time passed
       }
     };
   }
 
-  function debounce(func, delay) {
-    let timer;
-    return function (...args) {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        func.apply(this, args);
-      }, delay);
-    };
-  }
-  const debFcn = debounce(() => {
-    btn_trig.innerHTML = ++trigered;
-  }, 500);
-
-  btn.addEventListener("click", function () {
-    btn_press.innerHTML = ++count;
-    debFcn();
-  });
-
-  const btn1 = document.querySelector(".clickBtn1");
-  const btn_press1 = document.querySelector(".incClick1");
-  const btn_trig1 = document.querySelector(".incTrig1");
-  let count1 = 0;
-  let trigered1 = 0;
-  const th = throttle(() => {
-    btn_trig1.innerHTML = ++trigered1;
+  // Throttled Function - updates triggered count at max once every 800ms
+  const throttledTrigger = throttle(() => {
+    btnThrottleTriggered.innerHTML = ++throttleTriggeredCount;
   }, 800);
-  btn1.addEventListener("click", function () {
-    btn_press1.innerHTML = ++count1;
-    th();
+
+  // Click Event Handler (Throttle Example)
+  btnThrottle.addEventListener("click", function () {
+    btnThrottleCount.innerHTML = ++throttleClickCount; // Immediate count
+    throttledTrigger(); // Throttled trigger count
   });
+
+  // --------------------------------------------
+  // Bonus: Debounce Input Example (Real World)
+  // --------------------------------------------
+  const searchInput = document.querySelector(".searchInput");
+  const searchStatus = document.querySelector(".searchStatus");
+
+  if (searchInput && searchStatus) {
+    const debouncedSearch = debounce((query) => {
+      searchStatus.textContent = `Searching for: ${query}`;
+    }, 500);
+
+    searchInput.addEventListener("input", (e) => {
+      debouncedSearch(e.target.value); // Search triggered after typing stops
+    });
+  }
 });

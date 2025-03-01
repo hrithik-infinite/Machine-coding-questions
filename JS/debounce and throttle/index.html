@@ -4,23 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Debounce & Throttle Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .output {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        input {
+            padding: 5px;
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Debounce</h1>
-    <button class="clickBtn">Click me!</button>
-    <p>Button Pressed: <span class="incClick">0</span>Times</p>
-    <p>Triggered: <span class="incTrig">0</span>Times</p>
 
+    <h1>Debounce & Throttle Demo</h1>
 
+    <div class="section">
+        <h2>Debounce Example (Button Click)</h2>
+        <button class="clickBtn">Click me (Debounce)</button>
+        <p>Button Pressed: <span class="incClick output">0</span> Times</p>
+        <p>Debounce Triggered: <span class="incTrig output">0</span> Times</p>
+    </div>
 
-    <h1>Throttle</h1>
-    <button class="clickBtn1">Click me!</button>
-    <p>Button Pressed: <span class="incClick1">0</span>Times</p>
-    <p>Triggered: <span class="incTrig1">0</span>Times</p>
+    <div class="section">
+        <h2>Throttle Example (Button Click)</h2>
+        <button class="clickBtn1">Click me (Throttle)</button>
+        <p>Button Pressed: <span class="incClick1 output">0</span> Times</p>
+        <p>Throttle Triggered: <span class="incTrig1 output">0</span> Times</p>
+    </div>
+
+    <div class="section">
+        <h2>Debounce Example (Search Input)</h2>
+        <input type="text" class="searchInput" placeholder="Type to search...">
+        <p class="searchStatus output">Waiting for input...</p>
+    </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
