@@ -60,9 +60,43 @@ Welcome to the **Machine Coding Questions** repository! This collection features
 9. **Star Rating**: A rating system for products/services.
 10. **Themes (Dark/Light Mode)**: Implementing theming in an application.
 11. **To-Do List**: A task management system.
-12. **File/Folder Structure**: A File Folder structure like VS Code
+12. **File System**: A File/Folder structure like VS Code.
 
 ---
+
+## ✅ To-Do: Additional System Design Topics
+
+1. **Memoization** – Optimizing function calls using caching techniques.
+2. **Deep vs Shallow Copy** – Understanding object references in JavaScript.
+3. **Promise.all & Promise.race** – Handling multiple async operations.
+4. **Image Lazy Loading** – Optimizing page load performance.
+5. **Infinite Scroll** – Fetching and rendering data dynamically.
+6. **Drag and Drop** – Implementing a draggable UI.
+7. **Virtualized List** – Rendering large lists efficiently.
+8. **Context API vs Redux** – Implementing and comparing state management.
+9. **WebSockets in React** – Creating real-time applications.
+10. **Multi-Level Dropdown** – Implementing a hierarchical dropdown.
+11. **Notification Center** – Managing and displaying app notifications.
+12. **Rate Limiter** – Implementing APIs with request throttling.
+13. **URL Shortener** – Designing a scalable service with hashing and redirection.
+14. **Caching System** – Implementing LRU/MRU-based cache mechanisms.
+15. **Messaging Queue System** – Handling asynchronous processing and scalability.
+16. **Load Balancer** – Distributing traffic efficiently among servers.
+17. **Designing a Real-Time Chat App** – WebSockets, event-driven architecture, and scaling considerations.
+18. **Designing a Video Streaming Service** – Challenges of storing, encoding, and serving video at scale.
+19. **Search Engine** – Implementing indexing and ranking algorithms.
+20. **Collaborative Document Editing** – Real-time text editing like Google Docs.
+21. **Event-Driven Microservices** – Decoupling services for scalability.
+
+---
+
+## 🚀 How to Use
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/hrithik-infinite/Machine-coding-questions
+   ```
 
 ## 🚀 How to Use
 

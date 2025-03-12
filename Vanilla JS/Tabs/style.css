@@ -1,25 +1,24 @@
 body {
-    font-family: sans-serif;
-  }
-  .tabContent {
-    display: none;
-  }
-  .tabLinks {
-    background-color: beige;
-    padding: 10px 20px;
-    border: 1px solid black;
-    cursor: pointer;
-  }
-  
-  .tabLinks:hover {
-    background-color: bisque;
-  }
-  
-  .tabLinks.active {
-    background-color: bisque;
-    color: aqua;
-  }
-  .tabContent.active {
-    display: block;
-  }
-  
+  font-family: sans-serif;
+}
+.tabContent {
+  display: none;
+}
+.tabLinks {
+  background-color: beige;
+  padding: 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.tabLinks:hover {
+  background-color: bisque;
+}
+
+.tabLinks.active {
+  background-color: bisque;
+  color: aqua;
+}
+.tabContent.active {
+  display: block;
+}
