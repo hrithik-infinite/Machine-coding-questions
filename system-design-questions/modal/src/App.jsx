@@ -1,23 +1,38 @@
 import { useState } from "react";
-import "./App.css";
-import Modal from "./Components/Modal";
+
+const Modal = ({ title, bodyContent, onClose }) => {
+  return (
+    <div className="modal-overlay">
+      <div className="modal">
+        <h3>{title}</h3>
+        {bodyContent()}
+        <button className="close-btn" onClick={onClose}>
+          x
+        </button>
+      </div>
+    </div>
+  );
+};
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => {
-    setIsModalOpen(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = () => {
+    setIsOpen(true);
   };
-  const closeModal = () =>{
-    setIsModalOpen(false);
-
-  }
-
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+  const body = () => {
+    return <div>This is body</div>;
+  };
   return (
-    <div>
-      <h1>Home Page</h1>
-      <button onClick={openModal}>Open Modal</button>
-      {isModalOpen && <Modal onClose={closeModal} />}
-    </div>
+    <>
+      <h3>Modal</h3>
+      <button className="open-btn" onClick={handleOpen}>
+        Open Modal
+      </button>
+      {isOpen && <Modal onClose={handleClose} title={"This is title"} bodyContent={body} />}
+    </>
   );
 }
 
