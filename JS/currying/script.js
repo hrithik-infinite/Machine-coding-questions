@@ -102,7 +102,7 @@ updateElemTxt("nameId")("This is manipulated via curry");
 
 function curry(func) {
   return function curried(...args) {
-    console.log("Current Args:", args);
+    console.log("Current Args:", args, args.length, func.length, func);
     if (args.length >= func.length) {
       return func(...args); // Fully applied, execute
     } else {

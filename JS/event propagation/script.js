@@ -16,9 +16,9 @@ const captureNav = document.querySelector(".capture-nav");
 const captureArticle = document.querySelector(".capture-article");
 const captureButton = document.querySelector(".capture-button");
 
-captureNav.addEventListener("click", () => console.log("CAPTURE: NAV clicked (capturing phase)"), { capture: true });
-captureArticle.addEventListener("click", () => console.log("CAPTURE: ARTICLE clicked (capturing phase)"), { capture: true });
-captureButton.addEventListener("click", () => console.log("CAPTURE: BUTTON clicked (capturing phase)"), { capture: true });
+captureNav.addEventListener("click", () => console.log("CAPTURE: NAV clicked (capturing phase)"), true);
+captureArticle.addEventListener("click", () => console.log("CAPTURE: ARTICLE clicked (capturing phase)"), true);
+captureButton.addEventListener("click", () => console.log("CAPTURE: BUTTON clicked (capturing phase)"), true);
 
 // ============ Stop Propagation (aside > figure > button) ============
 // Button stops propagation - figure and aside won’t trigger
