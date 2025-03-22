@@ -1,6 +1,6 @@
-# 🚀 Hrithik Infinite Machine Coding Questions
+# 🚀 Machine Coding Questions
 
-Welcome to **Hrithik Infinite Machine Coding Questions**! This repository is a collection of **JavaScript concepts, system design challenges, and frontend projects** to help you master **DSA, JavaScript, and React-based system design problems**.
+Welcome to **Machine Coding Questions**! This repository is a collection of **JavaScript concepts, system design challenges, and frontend projects** to help you master **DSA, JavaScript, and React-based system design problems**.
 
 ## 📂 Repository Structure
 
@@ -77,6 +77,6 @@ Want to contribute? Feel free to **open issues**, **fix bugs**, or **add new fea
 
 ## ⭐ Support & Connect
 
-If you found this repo helpful, **leave a star ⭐** and follow me on **[GitHub](https://github.com/hrithik-infinite)** for more cool projects! 🚀
+If you found this repo helpful, **leave a star ⭐** and follow me on **[GitHub](https://github.com/hrithik-infinite)** , **[Linkedin](linkedin.com/in/hrithikagarwal)** for more cool projects! 🚀
 
 Happy coding! 🎯
