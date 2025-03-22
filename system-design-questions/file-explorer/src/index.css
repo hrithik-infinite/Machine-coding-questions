@@ -1,0 +1,59 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.container {
+  margin-left: 10px;
+}
+
+.item {
+  padding: 5px 0;
+  position: relative;
+}
+
+.toggle-icon {
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.node-name {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.folder {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.file {
+  color: #34495e;
+}
+
+.add-file,
+.add-folder,
+.delete-icon {
+  cursor: pointer;
+  margin-left: 8px;
+  opacity: 0.7;
+}
+
+.add-file:hover,
+.add-folder:hover,
+.delete-icon:hover {
+  opacity: 1;
+}
+
+.children {
+  margin-left: 20px;
+  border-left: 1px dashed #ccc;
+  padding-left: 10px;
+}
