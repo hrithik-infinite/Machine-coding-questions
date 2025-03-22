@@ -77,6 +77,6 @@ Want to contribute? Feel free to **open issues**, **fix bugs**, or **add new fea
 
 ## ⭐ Support & Connect
 
-If you found this repo helpful, **leave a star ⭐** and follow me on **[GitHub](https://github.com/hrithik-infinite)** , **[Linkedin](linkedin.com/in/hrithikagarwal)** for more cool projects! 🚀
+If you found this repo helpful, **leave a star ⭐** and follow me on **[GitHub](https://github.com/hrithik-infinite)** , **[Linkedin](https://linkedin.com/in/hrithikagarwal)** for more cool projects! 🚀
 
 Happy coding! 🎯
