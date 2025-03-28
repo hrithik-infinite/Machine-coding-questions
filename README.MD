@@ -38,6 +38,8 @@ Build **real-world** frontend system design solutions with **React**:
 - **Progress Bar 📊**
 - **Theme Switcher 🎨**
 - **To-Do List ✅**
+- **Pagination**
+- **Advance Tic Tac Toe**
 
 ### 🔹 Vanilla JS Projects
 
