@@ -40,6 +40,7 @@ Build **real-world** frontend system design solutions with **React**:
 - **To-Do List ✅**
 - **Pagination**
 - **Advance Tic Tac Toe**
+- **Toast**
 
 ### 🔹 Vanilla JS Projects
 
