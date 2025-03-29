@@ -41,6 +41,8 @@ Build **real-world** frontend system design solutions with **React**:
 - **Pagination**
 - **Advance Tic Tac Toe**
 - **Toast**
+- **Memory Game**
+- **Infinite Scrolling**
 
 ### 🔹 Vanilla JS Projects
 
