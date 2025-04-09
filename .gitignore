@@ -3,3 +3,6 @@ practice
 Promise Problems
 .vscode
 TODO
+*.DS_Store
+system-design-questions/React/poll-widget
+system-design-questions/React/post*
