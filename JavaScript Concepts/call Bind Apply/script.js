@@ -1,15 +1,15 @@
-// Create an object with a property 'name'
-const obj = { name: "hrithik" };
+// Create an object with a property 'firstName'
+const obj = { firstName: "hrithik" };
 
 /**
  * Function that uses 'this' and takes an argument 'age'.
  * Note: The 'this' depends on how the function is called.
  */
 function sayHello(age) {
-  return "Hello " + this.name + " is " + age;
+  return "Hello " + this.firstName + " is " + age;
 }
 
-// Calling without setting 'this', so 'this.name' is undefined and age is undefined
+// Calling without setting 'this', so 'this.firstName' is undefined and age is undefined
 console.log("Direct call (no binding):", sayHello());
 // Output: "Hello undefined is undefined"
 
@@ -33,7 +33,7 @@ console.log("Calling bind function:", bindFcn(24));
 
 // Another function for practice
 function sayHi(age) {
-  return `${this.name} is ${age}`;
+  return `${this.firstName} is ${age}`;
 }
 
 // Using call - immediate invocation
@@ -49,7 +49,7 @@ console.log("Calling bound sayHi():", boundSayHi(24));
 
 // Example showing difference in `this` binding within an object
 const person = {
-  name: "hrithik",
+  firstName: "hrithik",
   age: 20,
   getAge: function () {
     return this.age; // 'this' refers to 'person'
