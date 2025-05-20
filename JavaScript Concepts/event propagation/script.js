@@ -21,7 +21,7 @@ captureArticle.addEventListener("click", () => console.log("CAPTURE: ARTICLE cli
 captureButton.addEventListener("click", () => console.log("CAPTURE: BUTTON clicked (capturing phase)"), true);
 
 // ============ Stop Propagation (aside > figure > button) ============
-// Button stops propagation - figure and aside won’t trigger
+// Button stops propagation - figure and aside won't trigger
 
 const stopAside = document.querySelector(".stop-aside");
 const stopFigure = document.querySelector(".stop-figure");
@@ -42,7 +42,7 @@ const addItemBtn = document.querySelector(".add-item-btn");
 
 list.addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
-    alert(`You clicked: ${e.target.innerText}`);
+    console.log(`You clicked: ${e.target.innerText}`);
   }
 });
 
