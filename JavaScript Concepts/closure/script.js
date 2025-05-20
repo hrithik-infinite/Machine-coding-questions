@@ -87,29 +87,33 @@ addSix(21); // 27
 
 function time(index) {
   let arr = [];
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < 10_000_000; i++) {
     arr[i] = i * i;
   }
   console.log(arr[index]);
 }
+console.time("fcn1");
 time(6);
 time(50);
+console.timeEnd("fcn1");
 
 // ==================================================
 // ⚡ Time Optimization With Closure (Memoization)
 
 function time2() {
   let arr = [];
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < 10_000_000; i++) {
     arr[i] = i * i;
   }
   return function (index) {
     console.log(arr[index]);
   };
 }
+console.time("fcn2");
 const closure = time2();
 closure(6);
 closure(50);
+console.timeEnd("fcn2");
 
 // ==================================================
 // ⏲️ Closures in Loop - var vs let
@@ -155,7 +159,7 @@ function counter() {
 }
 const ctr = counter();
 ctr.add(10);
-console.log(ctr.get()); // 10
+console.log("Counter get: ", ctr.get()); // 10
 
 // ==================================================
 // 📦 Module Pattern using Closure
