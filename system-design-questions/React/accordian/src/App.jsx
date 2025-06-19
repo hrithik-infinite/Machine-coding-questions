@@ -1,54 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const data = [
-  {
-    header: "Header 01",
-    content: "Content 01"
-  },
-  {
-    header: "Header 02",
-    content: "Content 02"
-  },
-  {
-    header: "Header 03",
-    content: "Content 03"
-  },
-  {
-    header: "Header 04",
-    content: "Content 04"
-  }
-];
-const Accordian = ({ data }) => {
-  const [clickedIndex, setClickedIndex] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const handleHeaderClick = (index) => {
-    if (!isOpen) {
-      setClickedIndex(index);
-      setIsOpen(true);
-    } else {
-      setClickedIndex(null);
-      setIsOpen(false);
-    }
+function App() {
+  const [data, setData] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  useEffect(() => {
+    fetch("./data.json")
+      .then((res) => res.json())
+      .then((json) => {
+        setData(json);
+        console.log(json);
+      });
+  }, []);
+
+  const toggleActive = (index) => {
+    setActiveIndex((prev) => (prev === index ? null : index));
   };
+
   return (
-    <div className="mainContainer">
+    <div className="main-div">
       {data.map((val, i) => (
-        <div className="accordianContainer">
-          <div className="accordionHeader" key={i} onClick={() => handleHeaderClick(i)}>
-            {val.header}
+        <div key={i} className="accordion-container">
+          <div className="accordion" onClick={() => toggleActive(i)}>
+            <span>{val.title}</span>
+            <span className="caret">{activeIndex === i ? "▴" : "▾"}</span>
           </div>
-          {clickedIndex === i && <div className="accordionBody">{val.content}</div>}
+          {activeIndex === i && <div className="accordion-content">{val.content}</div>}
         </div>
       ))}
     </div>
-  );
-};
-function App() {
-  return (
-    <>
-      <h2>Accordian</h2>
-      <Accordian data={data} />
-    </>
   );
 }
 

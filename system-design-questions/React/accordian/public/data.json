@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Javascript Basics",
+    "content": "Learn about variables, functions, and basic syntax in JavaScript."
+  },
+  {
+    "title": "React Introduction",
+    "content": "Understand components, props, and state in React."
+  },
+  {
+    "title": "Advanced Topics",
+    "content": "Explore hooks, context API, and performance optimization."
+  },
+  {
+    "title": "Testing in React",
+    "content": "Learn about unit testing, integration testing, and testing libraries."
+  },
+  {
+    "title": "Deployment",
+    "content": "Understand how to deploy React applications to production."
+  }
+]
